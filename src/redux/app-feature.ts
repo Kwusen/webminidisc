@@ -54,7 +54,7 @@ export const buildInitialState = (): AppState => {
         fullWidthSupport: loadPreference('fullWidthSupport', false),
         availableServices: getSimpleServices().concat(filterOutCorrupted(loadPreference('customServices', []))),
         lastSelectedService: loadPreference('lastSelectedService', 0),
-        factoryModeRippingInMainUi: true, // As this value is heavily device-dependent and not really that stable yet
+        factoryModeRippingInMainUi: false, // As this value is heavily device-dependent and not really that stable yet
         // it should not be stored in the preferences, and should default to false.
         audioExportService: loadPreference('audioExportService', 0),
         audioExportServiceConfig: loadPreference('audioExportServiceConfig', {}),

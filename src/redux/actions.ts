@@ -244,7 +244,7 @@ export function deleteService(index: number) {
 
 export function pair(serviceInstance: NetMDService, spec: MinidiscSpec) {
     return async function(dispatch: AppDispatch, getState: () => RootState) {
-        dispatch(batchActions([appStateActions.setPairingFailed(false)]));
+        dispatch(batchActions([appStateActions.setPairingFailed(false), appStateActions.setFactoryModeRippingInMainUi(false)]));
 
         serviceRegistry.mediaSessionService?.init(); // no need to await
 
