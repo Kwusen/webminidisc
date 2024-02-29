@@ -125,6 +125,12 @@ export const DumpDialog = ({
                                 <Typography component="p" variant="body2">
                                     Please keep in mind that this functionality is not stable.
                                 </Typography>
+                                <Typography component="p" variant="body2">
+                                    <br />DOWNLOAD ORIGINAL will retrieve the tracks as ATRAC-encoded files, a compressed format used by NetMD devices but unsupported by most other audio players.
+                                </Typography>
+                                <Typography component="p" variant="body2">
+                                    <br />DOWNLOAD DECOMPRESSED will first convert the tracks to standard WAV format, with a larger filesize but universally supported.
+                                </Typography>
                             </React.Fragment>
                         ) : (
                             <Typography component="p" variant="body2">
@@ -140,8 +146,8 @@ export const DumpDialog = ({
                 <Button onClick={handleClose}>Cancel</Button>
                 {isCapableOfDownload ? (
                     <>
-                        <Button onClick={() => handleStartTransfer(true)}>Download and convert</Button>
-                        <Button onClick={() => handleStartTransfer(false)}>Download</Button>
+                        <Button variant="outlined" onClick={() => handleStartTransfer(false)}>Download original</Button>
+                        <Button variant="outlined" onClick={() => handleStartTransfer(true)}>Download decompressed</Button>
                     </>
                 ) : (
                     <Button onClick={handleStartRecord} disabled={inputDeviceId === ''}>
