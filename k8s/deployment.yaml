@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webminidisc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webminidisc
+  template:
+    metadata:
+      labels:
+        app: webminidisc
+    spec:
+      containers:
+      - name: webminidisc
+        image: jonahm/webminidisc:latest
+        ports:
+        - containerPort: 3000

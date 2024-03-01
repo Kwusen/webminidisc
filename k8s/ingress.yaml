@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: webminidisc-ingress
+  namespace: default
+spec:
+  rules:
+  - host: webminidisc.closet
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: webminidisc
+            port:
+              number: 80
