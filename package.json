@@ -49,8 +49,8 @@
   "homepage": "https://web.minidisc.wiki/",
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "start": "npm run update-version && NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build": "npm run update-version && NODE_OPTIONS=--openssl-legacy-provider react-scripts build && bash -c 'cat public/extra-service-worker.js build/service-worker.js > build/final-service-worker.js'",
+    "start": "npm run update-version && react-scripts start",
+    "build": "npm run update-version && react-scripts build && bash -c 'cat public/extra-service-worker.js build/service-worker.js > build/final-service-worker.js'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
